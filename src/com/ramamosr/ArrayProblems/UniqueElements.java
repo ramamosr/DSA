@@ -1,0 +1,85 @@
+package com.ramamosr.ArrayProblems;
+
+import java.util.Arrays;
+
+/*
+Unique Elements
+Problem Description
+
+You are given an array A of N elements. You have to make all elements unique, to do so in one step you can increase any number by one.
+
+Find the minimum number of steps.
+
+
+
+Problem Constraints
+1 <= N <= 105
+1 <= A[i] <= 109
+
+
+
+Input Format
+The only argument given is an Array A, having N integers.
+
+
+
+Output Format
+Return the Minimum number of steps required to make all elements unique.
+
+
+
+Example Input
+Input 1:
+
+ A = [1, 1, 3]
+Input 2:
+
+ A = [2, 4, 5]
+
+
+Example Output
+Output 1:
+
+ 1
+Output 2:
+
+ 0
+
+
+Example Explanation
+Explanation 1:
+
+ We can increase the value of 1st element by 1 in 1 step and will get all unique elements. i.e [2, 1, 3].
+Explanation 2:
+
+ All elements are distinct.
+ */
+
+/*
+The task is to make all the elements of the array unique and that needs to be done optimally in minimum number of steps.
+Sort the Array and then start the traversing from the 2nd element.
+If the current element is same as the previous one then make this element equal to (previous + 1) and count the steps.
+ */
+public class UniqueElements {
+
+    public int solve(int[] A) {
+        int n = A.length;
+        Arrays.sort(A);
+        int steps = 0, i =1, j = 0;
+        while (j < n) {
+            if (i >= A[j]) {
+                steps += (i - A[j]);
+                i += 1;
+                j++;
+            } else {
+                i = A[j] + 1;
+                j += 1;
+            }
+        }
+        return steps;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}

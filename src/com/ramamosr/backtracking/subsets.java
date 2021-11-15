@@ -30,6 +30,20 @@ public class subsets {
             temp.add(source.get(index));
             generateSubSets(list,source,new ArrayList<>(temp),index+1);
         }
+   
+           public static void main(String[] args) {
+
+            Subsets ss = new Subsets();
+            ArrayList<Integer> al = new ArrayList<>();
+            al.add(15);
+            al.add(20);
+            al.add(12);
+            al.add(19);
+            al.add(4);
+            Collections.sort(al);
+            ss.subsets(al);
+
+        }
 }
 
 /*

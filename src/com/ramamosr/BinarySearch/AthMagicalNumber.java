@@ -103,7 +103,7 @@ Space Complexity: O(1).
         return calculateTerm(A,B,C);
     }
 
-    public int solveScaler(int A, int B, int C) {
+   public int solveScaler(int A, int B, int C) {
         long lcm = (long) B * C / getGCD(B, C);
         long low = 2, high = (long) 1e15, ans = 2;
         while (low <= high) {
@@ -116,6 +116,7 @@ Space Complexity: O(1).
             } else
                 low = mid + 1;
         }
+        return (int)(ans % (1000 * 1000 * 1000 + 7));
     }
 
     public static void main(String[] args) {

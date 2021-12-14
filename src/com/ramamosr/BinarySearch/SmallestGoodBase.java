@@ -1,3 +1,5 @@
+package com.ramamosr.BinarySearch;
+
 public class SmallestGoodBase {
 
     /*

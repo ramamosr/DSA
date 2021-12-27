@@ -1,7 +1,6 @@
 package com.ramamosr.Hashing;
 
 /*
-    /*
     Problem Description
 
 Given two array of integers A and B describing a pair of (A[i], B[i]) coordinates in 2D plane. A[i] describe x coordinates of the ith point in 2D plane whereas B[i] describes the y-coordinate of the ith point in 2D plane.
@@ -72,7 +71,7 @@ Points which are vertical or repeated are treated separately.
 
 Note: If we use map in c++ or HashMap in Java for storing the slope pair, then total time complexity of solution will be O(n^2 logn)
      */
- */
+ 
 public class PointsOnSameLineScaler {
     public int __gcd(int x, int y) {
         if (x == 0)

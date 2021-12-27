@@ -40,15 +40,32 @@ This can be used, for any i (1 <= i < n), if i + Z[i] == N , then the period of 
 If there is no such period, then N will be the period.
      */
 
-    public int solve(String A) {
+      public int solve(String A) {
         int result = A.length();
         int len = A.length();
         int[] zArr = PopulateZArray(A);
         for(int i=1; i<zArr.length;i++){
             if(i+zArr[i]==len)
                 return i;
+            //To optimize further for completely periodic strings
+            // with odd or even number of length, check if i the factor
+            // of the length of the string.
+//            if(i+zArr[i]==len && isFactor(i,len))
+//                return i;
         }
         return result;
+    }
+
+    public boolean isFactor(int index, int length){
+        for (int i=1; i<=Math.sqrt(length); i++)
+        {
+            if (length%i==0)
+            {
+                if (i == index)
+                    return true;
+            }
+        }
+        return false;
     }
 
     public int[] PopulateZArray(String A){

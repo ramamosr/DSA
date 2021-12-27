@@ -57,15 +57,9 @@ If there is no such period, then N will be the period.
     }
 
     public boolean isFactor(int index, int length){
-        for (int i=1; i<=Math.sqrt(length); i++)
-        {
-            if (length%i==0)
-            {
-                if (i == index)
-                    return true;
-            }
-        }
-        return false;
+            if (length%index==0)
+                return true;
+            else return false;
     }
 
     public int[] PopulateZArray(String A){

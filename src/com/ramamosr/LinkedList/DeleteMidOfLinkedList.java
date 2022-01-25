@@ -36,10 +36,6 @@ The only argument given is the node pointing to the head node of the linked list
             count++;
             temp = temp.next;
         }
-        if(count==2){
-            A.next = null;
-            return head;
-        }
         int mid = count / 2;
         temp = head;
         while(mid>1){

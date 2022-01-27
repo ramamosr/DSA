@@ -99,6 +99,9 @@ Explanation 2:
             slow = slow.next;
             fast = fast.next;
         }
+        
+        //Now slow is the start of the loop. Will have to get to the last node in the loop
+        // and remove the pointer.
 
         ListNode temp = slow;
         while(temp.next!=slow){

@@ -92,9 +92,14 @@ Explanation 2:
         st1.push(A);
         while(!st1.isEmpty()){
             TreeNode temp = st1.pop();
+            // In post order traversal root is the last.
             st2.push(temp);
+            // Adding left node to the stack first. So when its popped and added it to stack2,
+            // it turns up on top.
             if(temp.left!=null)
                 st1.push(temp.left);
+            //Adding right node to stack at the last. when its popped and added it to stack2.
+            //it turns up next to left
             if(temp.right!=null)
                 st1.push(temp.right);
 

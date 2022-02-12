@@ -101,7 +101,7 @@ Explanation 1:
             return null;
         int count = rootIndex - inStart;
 
-        temp.left = constructTree(pre,preStart+1,preStart+count,in,inStart,inEnd-1);
+        temp.left = constructTree(pre,preStart+1,preStart+count,in,inStart,rootIndex-1);
         temp.right = constructTree(pre, preStart+count+1,preEnd,in,rootIndex+1,inEnd);
 
         return temp;

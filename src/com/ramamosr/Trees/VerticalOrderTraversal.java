@@ -133,4 +133,43 @@ Explanation 1:
         tree.root.right.right = new TreeNode(9);
         tree.verticalOrderTraversal(tree.root);
     }
+    
+    public ArrayList < ArrayList < Integer >> verticalOrderTraversaScalerl(TreeNode root) {
+        ArrayList < ArrayList < Integer >> ans = new ArrayList < ArrayList < Integer >> ();
+
+        ArrayList < Integer > ar = new ArrayList < Integer > ();
+        if (root == null) {
+            return ans;
+        }
+
+        TreeMap< Integer, ArrayList < Integer >> tm = new TreeMap < > ();
+        Queue < TreePair > q = new LinkedList < TreePair > ();
+        q.add(new TreePair(root, 0));
+
+        while (!q.isEmpty()) {
+            TreePair p = q.poll();
+            int v = p.first.val;
+            int x = p.second;
+            ar = new ArrayList < Integer > ();
+            if (tm.containsKey(x)) {
+                ar = tm.get(x);
+                ar.add(v);
+            } else {
+                ar.add(v);
+            }
+
+            tm.put(x, ar);
+            if (p.first.left != null) {
+                q.add(new TreePair(p.first.left, x - 1));
+            }
+            if (p.first.right != null) {
+                q.add(new TreePair(p.first.right, x + 1));
+            }
+        }
+        for (int x: tm.keySet()) {
+            ArrayList < Integer > f = tm.get(x);
+            ans.add(f);
+        }
+        return ans;
+    }
 }

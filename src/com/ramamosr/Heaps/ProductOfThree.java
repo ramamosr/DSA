@@ -92,8 +92,10 @@ Explanation 2:
         }
         result.add(prod);
         for(i=3;i<A.size();i++){
-            pq.offer(A.get(i));
-            prod = (prod/pq.poll()) * A.get(i);
+            if(A.get(i) > pq.peek()) {
+                pq.offer(A.get(i));
+                prod = (prod / pq.poll()) * A.get(i);
+            }
             result.add(prod);
         }
         return result;

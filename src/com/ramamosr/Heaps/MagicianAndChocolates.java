@@ -131,17 +131,17 @@ Explanation 2:
     }
 
     public int nchoc(int A, ArrayList<Integer> B) {
-        int mod = 1000000007;
+        long mod = 1000000007;
         for(int i=B.size()-1;i >=0;i--){
             MaxHeapify(B,i);
         }
         long sum = 0;
         while(A-->0){
             int chocs = extractMax(B);
+            sum = (sum%mod + chocs%mod)%mod;
             insertIntoHeap(B,chocs/2);
-            sum+=chocs;
         }
-        return ((int)sum%mod);
+        return ((int)sum);
     }
 
     public static void main(String[] args) {

@@ -142,4 +142,16 @@ Consider parent of i as a[i] and start depth first search from ““y”” to 
         }
         return 0;
     }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> A = new ArrayList<>();
+        A.add(1);
+        A.add(1);
+        A.add(2);
+        int B = 1;
+        int C = 2;
+
+        FirstDepthFirstSearch fdfs = new FirstDepthFirstSearch();
+        System.out.println(fdfs.solve(A,B,C));
+    }
 }
